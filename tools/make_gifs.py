@@ -305,6 +305,81 @@ def make_email():
     save_transparent(frames, "email.gif", 200)
 
 
+# --------------------------------------------------------------------------
+# Flying toaster (the After Dark classic), transparent, wings flapping.
+# --------------------------------------------------------------------------
+def make_toaster():
+    w, h = 56, 40
+    frames = []
+    bx0, by0, bx1, by1 = 14, 14, 44, 36
+    for f in range(6):
+        img = Image.new("RGB", (w, h), MAGENTA)
+        d = ImageDraw.Draw(img)
+        d.rounded_rectangle([bx0, by0, bx1, by1], radius=5,
+                            fill=(195, 198, 210), outline=(70, 70, 85))
+        d.line([(bx0 + 4, by0 + 1), (bx1 - 4, by0 + 1)], fill=(60, 60, 75), width=2)
+        # two slices of toast poking out the top
+        d.rectangle([bx0 + 5, by0 - 7, bx0 + 13, by0 + 1], fill=(215, 155, 75),
+                    outline=(120, 80, 30))
+        d.rectangle([bx1 - 13, by0 - 7, bx1 - 5, by0 + 1], fill=(215, 155, 75),
+                    outline=(120, 80, 30))
+        # push-down lever
+        d.rectangle([bx1 - 1, by0 + 5, bx1 + 2, by0 + 9], fill=(120, 120, 135))
+        # flapping wings
+        wy = int(math.sin(f / 6.0 * 2 * math.pi) * 6)
+        d.polygon([(bx0, by0 + 4), (bx0 - 12, by0 - 3 + wy), (bx0 - 9, by0 + 11 + wy)],
+                  fill=(255, 255, 255), outline=(150, 150, 165))
+        d.polygon([(bx1, by0 + 4), (bx1 + 12, by0 - 3 + wy), (bx1 + 9, by0 + 11 + wy)],
+                  fill=(255, 255, 255), outline=(150, 150, 165))
+        frames.append(img)
+    save_transparent(frames, "toaster.gif", 110)
+
+
+# --------------------------------------------------------------------------
+# Gold trophy with a roving sparkle, transparent.
+# --------------------------------------------------------------------------
+def make_trophy():
+    w, h = 36, 44
+    c = w // 2
+    gold = (255, 205, 40)
+    dk = (175, 135, 10)
+    frames = []
+    sparkles = [(12, 12), (20, 11), (16, 16), (24, 13)]
+    for f in range(4):
+        img = Image.new("RGB", (w, h), MAGENTA)
+        d = ImageDraw.Draw(img)
+        d.arc([1, 8, 13, 22], 90, 270, fill=dk)
+        d.arc([23, 8, 35, 22], 270, 90, fill=dk)
+        d.polygon([(8, 8), (28, 8), (24, 24), (12, 24)], fill=gold, outline=dk)
+        d.rectangle([6, 6, 30, 9], fill=gold, outline=dk)
+        d.rectangle([c - 2, 24, c + 2, 31], fill=gold, outline=dk)
+        d.rectangle([c - 7, 31, c + 7, 35], fill=gold, outline=dk)
+        d.rectangle([c - 9, 35, c + 9, 40], fill=dk)
+        sx, sy = sparkles[f]
+        d.line([(sx - 2, sy), (sx + 2, sy)], fill=(255, 255, 255))
+        d.line([(sx, sy - 2), (sx, sy + 2)], fill=(255, 255, 255))
+        frames.append(img)
+    save_transparent(frames, "trophy.gif", 200)
+
+
+# --------------------------------------------------------------------------
+# Blinking warning triangle, transparent.
+# --------------------------------------------------------------------------
+def make_warning():
+    w, h = 38, 34
+    frames = []
+    for f in range(2):
+        img = Image.new("RGB", (w, h), MAGENTA)
+        d = ImageDraw.Draw(img)
+        d.polygon([(w // 2, 3), (3, h - 4), (w - 3, h - 4)],
+                  fill=(255, 210, 0), outline=(0, 0, 0))
+        if f == 0:
+            d.rectangle([w // 2 - 2, 11, w // 2 + 2, 23], fill=(0, 0, 0))
+            d.rectangle([w // 2 - 2, 26, w // 2 + 2, 30], fill=(0, 0, 0))
+        frames.append(img)
+    save_transparent(frames, "warning.gif", 450)
+
+
 if __name__ == "__main__":
     make_favicon()
     make_background()
@@ -316,4 +391,7 @@ if __name__ == "__main__":
     make_new_badge()
     make_divider()
     make_email()
+    make_toaster()
+    make_trophy()
+    make_warning()
     print("done. assets in", ASSETS)

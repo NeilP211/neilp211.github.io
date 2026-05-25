@@ -7,6 +7,7 @@
 <meta name="description" content="Sign Neil Patel's guestbook, 1999 style.">
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="retro.css">
+<link rel="stylesheet" href="absurd.css">
 </head>
 <body>
 <div class="flamebar"></div>
@@ -69,11 +70,13 @@
 <div class="statusbar" id="statusbar"></div>
 
 <script src="retro.js"></script>
+<script src="absurd.js"></script>
 <script>
   renderCounter("hitcount", 13372);
   renderGuestbook("gblist", "gbcount");
   startStatusBar("statusbar", "Sign the guestbook! It is the polite thing to do on someone's homepage. >>> entries saved locally in your browser <<<");
   stampUpdated("updated");
+  initAbsurdity({ maxPopups: 4 });
 </script>
 </body>
 </html>

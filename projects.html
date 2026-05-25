@@ -7,6 +7,7 @@
 <meta name="description" content="Projects by Neil Patel: a from-scratch Raft engine, mechanistic interpretability on Pythia, a netcode shooter, a GNN stylist, geospatial visual search, and more.">
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="retro.css">
+<link rel="stylesheet" href="absurd.css">
 </head>
 <body>
 <div class="flamebar"></div>
@@ -115,10 +116,12 @@
 <div class="statusbar" id="statusbar"></div>
 
 <script src="retro.js"></script>
+<script src="absurd.js"></script>
 <script>
   renderCounter("hitcount", 13372);
   startStatusBar("statusbar", "7 real projects loaded. Go (x2), Rust, Python, TypeScript, C#. >>> click a project name for the source <<<");
   stampUpdated("updated");
+  initAbsurdity({ maxPopups: 5, banner: true });
 </script>
 </body>
 </html>

@@ -7,6 +7,7 @@
 <meta name="description" content="The official homepage of Neil Patel. Computer Science @ UNC. Distributed systems, ML interpretability, netcode, and more.">
 <link rel="icon" href="favicon.ico">
 <link rel="stylesheet" href="retro.css">
+<link rel="stylesheet" href="absurd.css">
 </head>
 <body>
 <div class="flamebar"></div>
@@ -88,10 +89,12 @@
 <div class="statusbar" id="statusbar"></div>
 
 <script src="retro.js"></script>
+<script src="absurd.js"></script>
 <script>
   renderCounter("hitcount", 13372);
   startStatusBar("statusbar", "Welcome to Neil Patel's Homepage !!! This page is best experienced with the MIDI turned ON. >>> SIGN THE GUESTBOOK <<<");
   stampUpdated("updated");
+  initAbsurdity({ maxPopups: 7, banner: true });
 </script>
 </body>
 </html>

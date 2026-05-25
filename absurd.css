@@ -1,0 +1,233 @@
+/* ===================================================================
+   absurd.css - the maximum-1999 layer: fake popups, cursor sparkles,
+   flying toasters, a bouncing logo, a desktop helper, and a banner ad.
+   Everything decorative is pointer-events:none so it never traps clicks.
+   =================================================================== */
+
+/* Fake Windows-98 popup windows. */
+.pop {
+  position: fixed;
+  width: 300px;
+  background: #c0c0c0;
+  border: 3px outset #ffffff;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+  font-family: "MS Sans Serif", "Comic Sans MS", Tahoma, sans-serif;
+  z-index: 10000;
+}
+.pop-title {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 3px 4px 3px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  user-select: none;
+}
+.pop-title button {
+  background: #c0c0c0;
+  border: 2px outset #ffffff;
+  color: #000000;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+  line-height: 1;
+  padding: 0 6px;
+  cursor: pointer;
+}
+.pop-body { padding: 10px; color: #000000; font-size: 13px; }
+.pop-body button {
+  margin-top: 8px;
+  padding: 4px 10px;
+  border: 2px outset #ffffff;
+  background: #c0c0c0;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+.pop-body input[type=text] {
+  border: 2px inset #888;
+  padding: 3px;
+  font-family: inherit;
+}
+.pop .bar {
+  height: 16px;
+  border: 2px inset #888;
+  background: #ffffff;
+  margin-top: 6px;
+  overflow: hidden;
+}
+.pop .bar > i { display: block; height: 100%; width: 0; background: #000080; }
+
+/* Cursor sparkle trail. */
+.trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  background: url("assets/star.gif") no-repeat center / contain;
+  transform: translate(-50%, -50%);
+  animation: trailfade 0.8s ease-out forwards;
+}
+@keyframes trailfade {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  to   { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+}
+
+/* Flying toasters. */
+.toaster {
+  position: fixed;
+  left: 0;
+  pointer-events: none;
+  z-index: 9990;
+  width: 56px;
+  height: 40px;
+  image-rendering: pixelated;
+}
+@keyframes flyacross {
+  from { transform: translate(-90px, 0); }
+  to   { transform: translate(112vw, -46px); }
+}
+
+/* Bouncing screensaver logo. */
+.bouncer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 9990;
+  font-family: "Comic Sans MS", cursive;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 4px 9px;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+}
+
+/* Desktop helper character. */
+.assistant { position: fixed; left: 14px; bottom: 42px; z-index: 9995; width: 168px; }
+.assistant .bubble {
+  background: #ffffcc;
+  border: 2px solid #000000;
+  border-radius: 9px;
+  padding: 8px 10px;
+  font-size: 12px;
+  color: #000000;
+  font-family: "Comic Sans MS", cursive;
+  position: relative;
+  margin-bottom: 6px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+.assistant .bubble:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+  border-width: 10px 8px 0 0;
+  border-style: solid;
+  border-color: #000000 transparent transparent transparent;
+}
+.assistant .bubble .x {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  width: 18px;
+  height: 18px;
+  border: 2px outset #ffffff;
+  background: #c0c0c0;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+.assistant .guy {
+  width: 54px;
+  height: 54px;
+  margin-left: 22px;
+  border-radius: 50% 50% 46% 46%;
+  background: radial-gradient(circle at 40% 35%, #9cff3a, #2e8b00);
+  border: 2px solid #1a4d00;
+  position: relative;
+  animation: bob 1.6s ease-in-out infinite;
+}
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+.assistant .eye {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  top: 11px;
+}
+.assistant .eye.l { left: 8px; }
+.assistant .eye.r { right: 8px; }
+.assistant .eye:after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #000000;
+  border-radius: 50%;
+  top: 6px;
+  left: 5px;
+}
+.assistant .mouth {
+  position: absolute;
+  bottom: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 9px;
+  border-bottom: 3px solid #1a4d00;
+  border-radius: 0 0 11px 11px;
+}
+
+/* Flashing banner ad. */
+.bannerad {
+  display: block;
+  width: 100%;
+  max-width: 468px;
+  margin: 8px auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 9px 6px;
+  border: 4px outset #ffff00;
+  cursor: pointer;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #000;
+  animation: flashbg 0.5s steps(1) infinite;
+}
+@keyframes flashbg {
+  0%   { background: #ff0000; }
+  25%  { background: #008000; }
+  50%  { background: #0000ff; }
+  75%  { background: #cc00ff; }
+  100% { background: #ff0000; }
+}
+
+/* Master panic button. */
+.killpops {
+  position: fixed;
+  right: 10px;
+  bottom: 34px;
+  z-index: 10001;
+  background: #ffff00;
+  border: 3px outset #ffffff;
+  font-family: "Comic Sans MS", cursive;
+  font-weight: bold;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: #aa0000;
+}
+
+@media (max-width: 560px) {
+  .pop { width: 84vw; }
+  .assistant { display: none; }
+  .bannerad { font-size: 12px; }
+}
