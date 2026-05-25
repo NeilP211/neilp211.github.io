@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>~*~ My Projects ~*~ Neil Patel's Homepage</title>
+<meta name="description" content="Projects by Neil Patel: a from-scratch Raft engine, mechanistic interpretability on Pythia, a netcode shooter, a GNN stylist, geospatial visual search, and more.">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="retro.css">
+</head>
+<body>
+<div class="flamebar"></div>
+<div class="page">
+<table class="frame"><tbody><tr>
+
+<td class="sidebar">
+  <img src="assets/globe.gif" alt="spinning globe" width="40" height="40">
+  <div class="neon" style="font-size:13px;margin:4px 0;">Neil's Corner<br>of the WWW</div>
+  <a class="navbtn" href="index.html">[*] HOME</a>
+  <a class="navbtn active" href="projects.html">[+] MY PROJECTS</a>
+  <a class="navbtn" href="guestbook.html">[!] GUESTBOOK</a>
+  <a class="navbtn" href="about.html">[?] ABOUT ME</a>
+  <div class="divider"></div>
+  <button class="midibtn" onclick="toggleMidi(this)">|&gt; PLAY MIDI</button>
+  <div class="tiny" style="color:#aaf;margin-top:6px;">turn your speakers UP</div>
+  <div class="divider"></div>
+  <div class="tiny neon">You are visitor</div>
+  <div class="counter" id="hitcount"></div>
+  <div class="divider"></div>
+  <div class="badge">Best viewed in<br>Netscape Navigator 4.0<br>@ 800x600</div>
+  <div style="margin-top:8px;"><img src="assets/email.gif" alt="email" width="44" height="30"><br>
+    <a class="tiny" href="mailto:ndpatel@unc.edu">EMAIL ME!</a></div>
+</td>
+
+<td class="main">
+  <h1 class="title rainbow">My Projects</h1>
+  <marquee scrollamount="5" class="neon">
+    *~*~* yes these are all real and yes you can run them *~*~* click the names for source code *~*~*
+  </marquee>
+
+  <div class="project">
+    <h3><a href="https://github.com/NeilP211/distkv" target="_blank" rel="noopener">distkv</a>
+      <img src="assets/new.gif" width="26" height="26" alt="new" style="vertical-align:middle;"></h3>
+    <p>A from-scratch <b>Raft</b> consensus engine, with no etcd or raft library doing
+    the hard part. Leader election, log replication, snapshots, and joint-consensus
+    membership changes, verified by a deterministic chaos suite plus a linearizability
+    checker (152k ops). Ships with a live TUI dashboard, Prometheus and Grafana, and
+    Helm / Kubernetes deploys.</p>
+    <div class="stack"><span>Go</span><span>gRPC</span><span>Raft</span><span>bbolt</span><span>Kubernetes</span></div>
+  </div>
+
+  <div class="project">
+    <h3><a href="https://github.com/NeilP211/neuropeek" target="_blank" rel="noopener">neuropeek</a>
+      <img src="assets/new.gif" width="26" height="26" alt="new" style="vertical-align:middle;"></h3>
+    <p>A mechanistic-interpretability lab that reproduces <b>and</b> extends the Olsson
+    2022 induction-head results on Pythia, with a custom <b>Triton kernel</b> on the
+    hot probing path. Headline finding: scale-invariant emergence of induction heads
+    at training step ~1000.</p>
+    <div class="stack"><span>Python</span><span>PyTorch</span><span>Triton</span><span>Pythia</span></div>
+  </div>
+
+  <div class="project">
+    <h3><a href="https://github.com/NeilP211/exfil" target="_blank" rel="noopener">exfil</a></h3>
+    <p>A browser-playable, authoritative-server extraction shooter with real
+    competitive netcode: a <b>64Hz tick</b>, client-side prediction, lag compensation,
+    and a measured peeker's-advantage window. The simulation core is shared across
+    server and client.</p>
+    <div class="stack"><span>Go</span><span>Rust / WASM</span><span>TypeScript</span><span>three.js</span></div>
+  </div>
+
+  <div class="project">
+    <h3><a href="https://github.com/NeilP211/runway" target="_blank" rel="noopener">runway</a></h3>
+    <p>An AI stylist that learns what actually <i>goes together</i>. A <b>graph neural
+    network</b> trained on 35k Polyvore outfits scores compatibility at <b>0.848 AUC</b>,
+    powering catalog search, image-extracted color and brand filters, and an interactive
+    "Catwalk" outfit builder.</p>
+    <div class="stack"><span>Python</span><span>PyTorch</span><span>GNN</span><span>Full-stack</span></div>
+  </div>
+
+  <div class="project">
+    <h3><a href="https://github.com/NeilP211/crypt" target="_blank" rel="noopener">crypt</a></h3>
+    <p>Geospatial visual search for haunted and abandoned places. Drop a photo and a
+    <b>from-scratch Rust HNSW index</b> ranks similar locations by CLIP-embedding
+    similarity, distance, and lore.</p>
+    <div class="stack"><span>Rust</span><span>Next.js</span><span>PostGIS</span><span>CLIP</span><span>AWS</span></div>
+  </div>
+
+  <div class="project">
+    <h3><a href="https://github.com/NeilP211/LookBetter" target="_blank" rel="noopener">LookBetter</a></h3>
+    <p>A full-stack face-analysis app. FastAPI plus <b>MediaPipe</b> detect 478 facial
+    landmarks and score classic proportions (FWHR, symmetry), served to a React
+    frontend.</p>
+    <div class="stack"><span>FastAPI</span><span>MediaPipe</span><span>React</span></div>
+  </div>
+
+  <div class="project">
+    <h3><a href="https://github.com/NeilP211/fortnut-2" target="_blank" rel="noopener">fortnut-2</a></h3>
+    <p>A solo-built <b>Unity (C#)</b> first-person shooter with custom Blender models,
+    shipped to GameJolt. Built as a kid who really liked Fortnite, kept around because
+    it still rips.</p>
+    <div class="stack"><span>Unity</span><span>C#</span><span>Blender</span></div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="webring center">
+    More on <a href="https://github.com/NeilP211" target="_blank" rel="noopener"><b>my GitHub</b></a>.
+    Now go <a href="guestbook.html">sign my guestbook</a>!
+  </div>
+  <p class="center tiny neon" id="updated"></p>
+</td>
+
+</tr></tbody></table>
+</div>
+<div class="flamebar"></div>
+<div class="statusbar" id="statusbar"></div>
+
+<script src="retro.js"></script>
+<script>
+  renderCounter("hitcount", 13372);
+  startStatusBar("statusbar", "7 real projects loaded. Go (x2), Rust, Python, TypeScript, C#. >>> click a project name for the source <<<");
+  stampUpdated("updated");
+</script>
+</body>
+</html>

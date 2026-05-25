@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>~*~ Neil Patel's Homepage ~*~ [[ UNDER CONSTRUCTION ]]</title>
+<meta name="description" content="The official homepage of Neil Patel. Computer Science @ UNC. Distributed systems, ML interpretability, netcode, and more.">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="retro.css">
+</head>
+<body>
+<div class="flamebar"></div>
+<div class="page">
+<table class="frame"><tbody><tr>
+
+<td class="sidebar">
+  <img src="assets/globe.gif" alt="spinning globe" width="40" height="40">
+  <div class="neon" style="font-size:13px;margin:4px 0;">Neil's Corner<br>of the WWW</div>
+  <a class="navbtn active" href="index.html">[*] HOME</a>
+  <a class="navbtn" href="projects.html">[+] MY PROJECTS</a>
+  <a class="navbtn" href="guestbook.html">[!] GUESTBOOK</a>
+  <a class="navbtn" href="about.html">[?] ABOUT ME</a>
+  <div class="divider"></div>
+  <button class="midibtn" onclick="toggleMidi(this)">|&gt; PLAY MIDI</button>
+  <div class="tiny" style="color:#aaf;margin-top:6px;">turn your speakers UP</div>
+  <div class="divider"></div>
+  <div class="tiny neon">You are visitor</div>
+  <div class="counter" id="hitcount"></div>
+  <div class="divider"></div>
+  <div class="badge">Best viewed in<br>Netscape Navigator 4.0<br>@ 800x600</div>
+  <div style="margin-top:8px;"><img src="assets/email.gif" alt="email" width="44" height="30"><br>
+    <a class="tiny" href="mailto:ndpatel@unc.edu">EMAIL ME!</a></div>
+</td>
+
+<td class="main">
+  <h1 class="title rainbow">Neil Patel's Homepage</h1>
+  <marquee scrollamount="6" class="neon" style="font-size:20px;">
+    *~*~* WELCOME TO MY CORNER OF THE INTERNET !!! ~*~*~ thanks for stopping by !!! ~*~*~ don't forget to SIGN MY GUESTBOOK ~*~*~
+  </marquee>
+
+  <div class="center"><img src="assets/construction.gif" alt="under construction" width="280" height="44"></div>
+
+  <div class="box">
+    <h2><img src="assets/star.gif" width="18" height="18" alt="*"> Welcome, surfer!</h2>
+    <p>Hi, I'm <b>Neil Patel</b>, a Computer Science student at <b>UNC Chapel Hill</b>.
+    This is my little homepage on the World Wide Web. I build things that are usually
+    harder than they need to be: from-scratch distributed consensus, mechanistic
+    interpretability of language models, competitive multiplayer netcode, and graph
+    neural networks that have opinions about your outfit.</p>
+    <p>The design here is a loving tribute to 1999. The projects are real. Grab a
+    Surge, adjust your CRT, and click around.</p>
+    <p class="center">
+      <a href="projects.html"><b>&gt;&gt; SEE MY PROJECTS &lt;&lt;</b></a>
+      &nbsp; <img src="assets/new.gif" width="30" height="30" alt="new" style="vertical-align:middle;">
+    </p>
+  </div>
+
+  <div class="newsbar">
+    <marquee scrollamount="4" behavior="scroll">
+      [ NEWS FLASH ] distkv now survives the chaos suite at 152k ops :: neuropeek finds scale-invariant emergence at step 1000 :: exfil runs at a 64Hz tick in your browser :: runway scores 0.848 AUC on outfit compatibility :: this site was hand-coded in Notepad (it was not, but it has the spirit) ::
+    </marquee>
+  </div>
+
+  <div class="box">
+    <h3 class="blink" style="color:#cc0000;">!! THIS SITE HAS WON AWARDS !!</h3>
+    <ul class="firelist">
+      <li><b>Coolest Site of the Day</b> - awarded by myself, today</li>
+      <li><b>Top 1% of all Homepages</b> - (sample size: this homepage)</li>
+      <li><b>Netscape Seal of Approval</b> - pending since 1999</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+  <div class="webring">
+    <img src="assets/globe.gif" width="24" height="24" alt="globe" style="vertical-align:middle;">
+    Member of the <b>Builds Things From Scratch</b> WebRing
+    &nbsp;|&nbsp; <a href="#">&lt; Prev</a>
+    &nbsp;|&nbsp; <a href="#">Random</a>
+    &nbsp;|&nbsp; <a href="#">Next &gt;</a>
+  </div>
+
+  <p class="center tiny neon" id="updated"></p>
+</td>
+
+</tr></tbody></table>
+</div>
+<div class="flamebar"></div>
+<div class="statusbar" id="statusbar"></div>
+
+<script src="retro.js"></script>
+<script>
+  renderCounter("hitcount", 13372);
+  startStatusBar("statusbar", "Welcome to Neil Patel's Homepage !!! This page is best experienced with the MIDI turned ON. >>> SIGN THE GUESTBOOK <<<");
+  stampUpdated("updated");
+</script>
+</body>
+</html>

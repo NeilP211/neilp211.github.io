@@ -1,0 +1,253 @@
+/* ===================================================================
+   retro.css - the deliberate 1999 atrocity layer.
+   Design is the joke. Content stays legible inside beveled boxes.
+   =================================================================== */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #08082a url("assets/bg_stars.png") repeat;
+  color: #00ff66;
+  font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", cursive, sans-serif;
+  font-size: 16px;
+  cursor: crosshair;
+}
+
+a { color: #ffff00; }
+a:visited { color: #ff66ff; }
+a:hover { color: #00ffff; background: #330033; }
+
+/* The flaming top and bottom borders. */
+.flamebar {
+  height: 44px;
+  background: url("assets/flames.gif") repeat-x;
+  image-rendering: pixelated;
+}
+
+/* Centered "table" page wrapper. */
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  background: #000033;
+  border-left: 4px ridge #ff00ff;
+  border-right: 4px ridge #ff00ff;
+}
+
+/* Fake frameset: sidebar + main as a real table. */
+table.frame { width: 100%; border-collapse: collapse; }
+table.frame > tbody > tr > td { vertical-align: top; }
+
+.sidebar {
+  width: 178px;
+  background: #000066;
+  border-right: 3px ridge #00ffff;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.main {
+  padding: 14px 18px;
+  background: #000033;
+}
+
+/* Navigation buttons in the sidebar. */
+.navbtn {
+  display: block;
+  margin: 6px 0;
+  padding: 7px 4px;
+  background: #c0c0c0;
+  color: #000088 !important;
+  font-weight: bold;
+  text-decoration: none;
+  border: 3px outset #ffffff;
+  text-align: center;
+}
+.navbtn:hover { background: #ffff66; color: #cc0000 !important; border-style: inset; }
+.navbtn.active { background: #ffff00; color: #cc0000 !important; }
+
+/* Beveled content boxes. Solid light bg so the real content reads. */
+.box {
+  background: #d8d8e8;
+  color: #000022;
+  border: 4px outset #9999cc;
+  margin: 14px 0;
+  padding: 10px 14px;
+}
+.box a { color: #0000cc; }
+.box a:visited { color: #660099; }
+.box a:hover { color: #cc0000; background: #ffff99; }
+
+.box h2, .box h3 { color: #aa0000; margin: 4px 0 8px 0; }
+
+/* Project cards, extra garish. */
+.project {
+  background: #fffceb;
+  border: 4px ridge #ff8800;
+  margin: 12px 0;
+  padding: 10px 14px;
+}
+.project h3 { color: #cc0000; margin: 0 0 6px 0; font-size: 20px; }
+.stack {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #003300;
+  font-weight: bold;
+}
+.stack span {
+  display: inline-block;
+  background: #00aa00;
+  color: #ffffff;
+  padding: 1px 6px;
+  margin: 2px 2px 0 0;
+  border: 1px outset #88ff88;
+}
+
+/* Blink, since the real <blink> tag is long dead. */
+.blink { animation: blink 0.9s steps(2, start) infinite; }
+@keyframes blink { to { visibility: hidden; } }
+
+/* Rainbow animated headline. */
+.rainbow {
+  font-weight: bold;
+  background-image: linear-gradient(90deg,
+    #ff0000, #ff9900, #ffee00, #33ff00, #00ffff, #3366ff, #cc00ff, #ff0000);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: slidehue 4s linear infinite;
+  text-shadow: none;
+}
+@keyframes slidehue { to { background-position: 200% center; } }
+
+h1.title {
+  text-align: center;
+  font-size: 40px;
+  margin: 10px 0 4px 0;
+  letter-spacing: 1px;
+}
+
+/* Marquee text styling (the tag still works). */
+marquee { font-weight: bold; }
+.newsbar {
+  background: #000000;
+  color: #00ff00;
+  border: 3px inset #00aa00;
+  padding: 5px;
+  font-size: 15px;
+  margin: 10px 0;
+}
+
+/* Glowy neon text for dark areas. */
+.neon {
+  color: #00ffff;
+  text-shadow: 0 0 4px #00ffff, 0 0 8px #0088ff;
+}
+
+/* Hit counter odometer. */
+.counter {
+  display: inline-block;
+  background: #000000;
+  border: 2px inset #444;
+  padding: 3px 5px;
+  font-family: "Courier New", monospace;
+  letter-spacing: 2px;
+}
+.counter b {
+  background: #111;
+  color: #00ff00;
+  padding: 1px 3px;
+  border: 1px solid #003300;
+}
+
+/* The fake MIDI player button. */
+.midibtn {
+  display: inline-block;
+  margin: 8px auto;
+  padding: 6px 10px;
+  background: #c0c0c0;
+  border: 3px outset #fff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+}
+.midibtn:active { border-style: inset; }
+
+/* Badges and small bits. */
+.badge {
+  display: inline-block;
+  background: #000;
+  color: #0f0;
+  border: 1px solid #0a0;
+  font-size: 11px;
+  padding: 2px 4px;
+  font-family: "Courier New", monospace;
+}
+
+.divider {
+  height: 8px;
+  background: url("assets/divider.gif") repeat-x;
+  image-rendering: pixelated;
+  margin: 12px 0;
+  border: none;
+}
+
+ul.firelist { list-style: none; padding-left: 4px; }
+ul.firelist li {
+  padding: 3px 0 3px 22px;
+  background: url("assets/fire_bullet.gif") no-repeat left center;
+}
+
+/* Webring + footer. */
+.webring {
+  text-align: center;
+  background: #000;
+  color: #ccc;
+  border: 3px ridge #888;
+  padding: 8px;
+  margin-top: 12px;
+  font-size: 13px;
+}
+.statusbar {
+  background: #000080;
+  color: #ffffff;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-top: 2px solid #fff;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Guestbook entries. */
+.gbentry {
+  background: #ffffff;
+  border: 2px dashed #cc00cc;
+  padding: 8px;
+  margin: 8px 0;
+  color: #000;
+}
+.gbentry .who { font-weight: bold; color: #cc0000; }
+.gbentry .when { font-size: 11px; color: #555; }
+.gbform input[type=text], .gbform textarea {
+  width: 95%;
+  font-family: inherit;
+  border: 2px inset #999;
+  padding: 3px;
+}
+.gbform label { font-weight: bold; color: #000088; }
+.gbform button {
+  margin-top: 6px;
+  padding: 5px 12px;
+  background: #ffff00;
+  border: 3px outset #fff;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.center { text-align: center; }
+.tiny { font-size: 11px; }
+img { border: 0; }

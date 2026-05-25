@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>~*~ About Me ~*~ Neil Patel's Homepage</title>
+<meta name="description" content="About Neil Patel: Computer Science at UNC Chapel Hill. Languages, ML/AI stack, and how to reach me.">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="retro.css">
+</head>
+<body>
+<div class="flamebar"></div>
+<div class="page">
+<table class="frame"><tbody><tr>
+
+<td class="sidebar">
+  <img src="assets/globe.gif" alt="spinning globe" width="40" height="40">
+  <div class="neon" style="font-size:13px;margin:4px 0;">Neil's Corner<br>of the WWW</div>
+  <a class="navbtn" href="index.html">[*] HOME</a>
+  <a class="navbtn" href="projects.html">[+] MY PROJECTS</a>
+  <a class="navbtn" href="guestbook.html">[!] GUESTBOOK</a>
+  <a class="navbtn active" href="about.html">[?] ABOUT ME</a>
+  <div class="divider"></div>
+  <button class="midibtn" onclick="toggleMidi(this)">|&gt; PLAY MIDI</button>
+  <div class="tiny" style="color:#aaf;margin-top:6px;">turn your speakers UP</div>
+  <div class="divider"></div>
+  <div class="tiny neon">You are visitor</div>
+  <div class="counter" id="hitcount"></div>
+  <div class="divider"></div>
+  <div class="badge">Best viewed in<br>Netscape Navigator 4.0<br>@ 800x600</div>
+  <div style="margin-top:8px;"><img src="assets/email.gif" alt="email" width="44" height="30"><br>
+    <a class="tiny" href="mailto:ndpatel@unc.edu">EMAIL ME!</a></div>
+</td>
+
+<td class="main">
+  <h1 class="title rainbow">About Me</h1>
+  <marquee scrollamount="5" class="neon">
+    *~*~* the human behind the homepage *~*~*
+  </marquee>
+
+  <div class="box">
+    <h2><img src="assets/star.gif" width="18" height="18" alt="*"> Who is this guy?</h2>
+    <p>I'm <b>Neil Patel</b>, a Computer Science student at the
+    <b>University of North Carolina at Chapel Hill</b>. I like building the real
+    version of hard things instead of importing a library that already did them:
+    a Raft engine instead of pulling in etcd, an HNSW index from scratch in Rust,
+    induction-head probing with a hand-written Triton kernel, netcode with an
+    honest 64Hz tick.</p>
+    <p>Most of my projects start with "can I actually build this myself?" and end
+    as something you can clone and run. When I am not doing that, I am probably
+    making a website look like it is from 1999 on purpose.</p>
+  </div>
+
+  <div class="box">
+    <h3>Languages I build in</h3>
+    <div class="stack">
+      <span>Python</span><span>Go</span><span>Rust</span><span>TypeScript</span>
+      <span>JavaScript</span><span>C#</span><span>Java</span><span>HTML5</span><span>CSS3</span>
+    </div>
+    <h3 style="margin-top:10px;">ML &amp; AI toolkit</h3>
+    <div class="stack">
+      <span>PyTorch</span><span>PyTorch Geometric</span><span>Triton</span>
+      <span>Hugging Face</span><span>OpenCLIP</span><span>MediaPipe</span>
+      <span>OpenCV</span><span>scikit-learn</span><span>NumPy</span><span>Pandas</span>
+    </div>
+  </div>
+
+  <div class="box">
+    <h3 class="blink" style="color:#cc0000;">!! CONTACT ME !!</h3>
+    <ul class="firelist">
+      <li><b>Email:</b> <a href="mailto:ndpatel@unc.edu">ndpatel@unc.edu</a></li>
+      <li><b>GitHub:</b> <a href="https://github.com/NeilP211" target="_blank" rel="noopener">github.com/NeilP211</a></li>
+      <li><b>LinkedIn:</b> <a href="https://linkedin.com/in/neil-patel-735132281/" target="_blank" rel="noopener">neil-patel-735132281</a></li>
+    </ul>
+    <p class="center"><img src="assets/email.gif" width="44" height="30" alt="email">
+      <a href="mailto:ndpatel@unc.edu"><b>drop me a line!</b></a></p>
+  </div>
+
+  <div class="divider"></div>
+  <div class="webring center">
+    <img src="assets/globe.gif" width="24" height="24" alt="globe" style="vertical-align:middle;">
+    Thanks for visiting. <a href="guestbook.html">Sign my guestbook</a> before you log off!
+  </div>
+  <p class="center tiny neon" id="updated"></p>
+</td>
+
+</tr></tbody></table>
+</div>
+<div class="flamebar"></div>
+<div class="statusbar" id="statusbar"></div>
+
+<script src="retro.js"></script>
+<script>
+  renderCounter("hitcount", 13372);
+  startStatusBar("statusbar", "Neil Patel :: Computer Science @ UNC Chapel Hill :: builds the hard version from scratch :: ndpatel@unc.edu");
+  stampUpdated("updated");
+</script>
+</body>
+</html>
